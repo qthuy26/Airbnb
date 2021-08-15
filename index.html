@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-pro-5.15.3-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div class="blur-header"></div>
+            <div class="header-nav">
+                <div class="header-wrap">
+                    <div class="logo-header">
+                        <a href="" class="logo-header-link">
+                            <svg width="102" height="32" fill="#fff" style="display: block;"><path d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z"></path></svg>
+                        </a>
+                    </div>
+                    <ul class="exp-nav">
+                        <li class="exp-item">
+                            <a href="" class="exp-link active">Places to stay</a>
+                            <div class="header-search">
+                                <div class="header-wrap-input">
+                                    <span>Location</span>
+                                    <input type="text" class="header-input-search search-location" placeholder="Where are you going?">
+                                </div>
+                                <div class="header-wrap-input">
+                                    <span>Check in</span>
+                                    <input type="text" class="header-input-search search-checkin" placeholder="Add dates">
+                                </div>
+                                <div class="header-wrap-input">
+                                    <span>Check out</span>
+                                    <input type="text" class="header-input-search search-checkout" placeholder="Add dates">
+                                </div>
+                                <div class="header-wrap-input">
+                                    <span>Guests</span>
+                                    <input type="text" class="header-input-search search-guest" placeholder="Add guests">
+                                </div>
+                                <a href="" class="header-search-icon-link">
+                                    <i class="header-search-icon fal fa-search"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="exp-item">
+                            <a href="" class="exp-link">Experiences</a>
+                        </li>
+                        <li class="exp-item">
+                            <a href="" class="exp-link">Online Experiences</a>
+                        </li>
+                    </ul>
+                    <ul class="user-nav">
+                        <li class="user-item">
+                            <a href="" class="become-host">Become a host</a>
+                        </li>
+                        <div class="user-item">
+                            <div class="switch-lang">
+                                <a href="" class="switch-lang-link">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;"><path d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <li class="user-item">
+                            <button class="user-btn">
+                                <a href="javascript:void(0)" class="user-link">
+                                    <i class="user-menu-icon far fa-bars"></i>
+                                </a>
+                                <ul class="user-menu-list">
+                                    <li class="user-menu-item">
+                                        <a href="" class="user-menu-link first-item">Sign up</a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="" class="user-menu-link">Login</a>
+                                    </li>
+                                    <div class="separate-menu"></div>
+                                    <li class="user-menu-item">
+                                        <a href="" class="user-menu-link">Host your home</a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="" class="user-menu-link">Host an expreience</a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="" class="user-menu-link">Help</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0)" class="user-avatar-link">
+                                    <i class="user-avatar-icon fas fa-user-circle"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+
+
+                    <div class="start-search-scroll">
+                        <input type="text" class="start-search-input" placeholder="Start your search">
+                        <a href="" class="header-start-search-icon-link">
+                            <i class="header-start-search-icon fal fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-content">
+                <p class="header-content-text">Not sure where to go? Perfect.</p>
+                <button class="header-content-btn">
+                    <span>I'm flexible</span>
+                </button>
+            </div>
+            
+        </header>
+
+
+        <main id="content">
+
+            <div class="explore-nearby">
+                <h4 class="explore-header">Explore nearby</h4>
+                <div class="explore-wrapper">
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_1.jpg" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Ha Noi</a>
+                            <a href="" class="explore-time">7 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_2.png" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Hoi An</a>
+                            <a href="" class="explore-time">4 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_3.png" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Ninh Binh</a>
+                            <a href="" class="explore-time">6 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_4.png" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Hai Phong</a>
+                            <a href="" class="explore-time">7 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_5.jpg" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Dong Hoi</a>
+                            <a href="" class="explore-time">45 minute drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_6.png" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Son Tay</a>
+                            <a href="" class="explore-time">7.5 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_7.jpg" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Pleiku</a>
+                            <a href="" class="explore-time">8.5 hour drive</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="./assets/img/explore_nearby_8.jpg" alt="" class="explore-img">
+                        <div class="explore-des">
+                            <a href="" class="explore-name">Sam Son</a>
+                            <a href="" class="explore-time">5 hour drive</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="live-anywhere">
+                <h4 class="live-header">Live anywhere</h4>
+                <div class="live-wrapper">
+                    <div class="live-item">
+                        <img src="./assets/img/live_anywhere_1.jpg" alt="" class="live-img">
+                        <a href="" class="live-des">Outdoor getaways</a>
+                    </div>
+                    <div class="live-item">
+                        <img src="./assets/img/live_anywhere_2.jpg" alt="" class="live-img">
+                        <a href="" class="live-des">Unique stays</a>
+                    </div>
+                    <div class="live-item">
+                        <img src="./assets/img/live_anywhere_3.jpg" alt="" class="live-img">
+                        <a href="" class="live-des">Entire homes</a>
+                    </div>
+                    <div class="live-item">
+                        <img src="./assets/img/live_anywhere_4.jpg" alt="" class="live-img">
+                        <a href="" class="live-des">Pets allowed</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <a href="" class="try-hosting-link">
+                <div class="try-hosting">
+                    <div class="try-hosting-content">
+                        <h4 class="hosting-header">Try hosting</h4>
+                        <p class="hosting-des">Earn extra income and unlock new opportunities by sharing your space.</p>
+                        <button class="hosting-btn">Learn more</button>
+                    </div>
+                </div>
+            </a>
+
+
+            <div class="discover-exp">
+                <h4 class="discover-header">Discover Experiences</h4>
+                <p class="discover-header-des">Unique activities with local experts—in person or online.</p>
+                <div class="discover-wrapper">
+                    <div class="discover-item">
+                        <img src="./assets/img/discover_exp_1.jpg" alt="" class="discover-img">
+                        <a href="" class="discover-item-header">Experiences</a>
+                        <a href="" class="discover-item-des">Local things to do, wherever you are.</a>
+                    </div>
+                    <div class="discover-item">
+                        <img src="./assets/img/discover_exp_2.jpg" alt="" class="discover-img">
+                        <a href="" class="discover-item-header">Online Experiences</a>
+                        <a href="" class="discover-item-des">Live, interactive activities led by Hosts.</a>
+                    </div>
+                    <div class="discover-item">
+                        <img src="./assets/img/discover_exp_3.jpg" alt="" class="discover-img">
+                        <button class="discover-featured-btn">FEATURED</button>
+                        <a href="" class="discover-item-header">Olympians & Paralympians</a>
+                        <a href="" class="discover-item-des">Online activities hosted by athletes.</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="inspiration">
+                <div class="inspiration-list">
+                    <h4 class="inspiration-header">Inspiration for future getaways</h4>
+                    <button class="inspiration-item active">
+                        Destinations for art & culture
+                    </button>
+                    <button class="inspiration-item">
+                        Destinations for outdoor adventure
+                    </button>
+                    <button class="inspiration-item">
+                        Mountain cabins
+                    </button>
+                    <button class="inspiration-item">
+                        Beach destinations
+                    </button>
+                    <button class="inspiration-item">
+                        Popular destinations
+                    </button>
+                    <button class="inspiration-item">
+                        Unique Stays
+                    </button>
+                    <div class="line"></div>
+                    <div class="line-active"></div>
+                </div>
+    
+    
+    
+                <div class="inspiration-content-wrapper">
+                    <!-- Destinations for art & culture -->
+                    <ul class="inspiration-content active">
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Phoenix</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Hot Springs</a>
+                            <a href="" class="inspiration-content-link">Arkansas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Los Angeles</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">San Diego</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">San Francisco</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Barcelona</a>
+                            <a href="" class="inspiration-content-link">Catalonia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Prague</a>
+                            <a href="" class="inspiration-content-link">Czechia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Washington</a>
+                            <a href="" class="inspiration-content-link">District of Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Keswick</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">London</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Scarborough</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Sherwood Forest</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">York</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Paris</a>
+                            <a href="" class="inspiration-content-link">France</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Rhodes</a>
+                            <a href="" class="inspiration-content-link">Greece</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nashville</a>
+                            <a href="" class="inspiration-content-link">Indiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Dublin</a>
+                            <a href="" class="inspiration-content-link">Ireland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Florence</a>
+                            <a href="" class="inspiration-content-link">Italy</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Rome</a>
+                            <a href="" class="inspiration-content-link">Italy</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lisbon</a>
+                            <a href="" class="inspiration-content-link">Lisbon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Grande Isle</a>
+                            <a href="" class="inspiration-content-link">Louisiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">New Orleans</a>
+                            <a href="" class="inspiration-content-link">Louisiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Marthas Vineyard</a>
+                            <a href="" class="inspiration-content-link">Massachusetts</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Haven</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Duluth</a>
+                            <a href="" class="inspiration-content-link">Minnesota</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Amsterdam</a>
+                            <a href="" class="inspiration-content-link">Netherlands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">New York</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nice</a>
+                            <a href="" class="inspiration-content-link">Provence-Alpes-Côte d'Azur</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Inverness</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Malaga</a>
+                            <a href="" class="inspiration-content-link">Spain</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Valencia</a>
+                            <a href="" class="inspiration-content-link">Spain</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Split</a>
+                            <a href="" class="inspiration-content-link">Split-Dalmatia Country</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nashville</a>
+                            <a href="" class="inspiration-content-link">Tennessee</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Austin</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Houston</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Darthmouth</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Edinburgh</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Liverpool</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">St Ives</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Powell</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Anna</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Leavenworth</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Seattle</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Destinations for outdoor adventure -->
+                    <ul class="inspiration-content">
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Martin</a>
+                            <a href="" class="inspiration-content-link">Alabama</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Banff</a>
+                            <a href="" class="inspiration-content-link">Alberta</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nerja</a>
+                            <a href="" class="inspiration-content-link">Andalucía</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Greer</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Havasu City</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Powell</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">North Rim</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Payson</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Pinetop-Lakeside</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Red Rock</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Dinner Plain</a>
+                            <a href="" class="inspiration-content-link">Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Streaky Bay</a>
+                            <a href="" class="inspiration-content-link">Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Emerald Lake</a>
+                            <a href="" class="inspiration-content-link">Bristish Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Vancouver Island</a>
+                            <a href="" class="inspiration-content-link">British Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                            <a href="" class="inspiration-content-link">British Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Idyllwild-Pine Cove</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mammorth Lakes</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Palm Desert</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Shaver Lake</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Lake Tahoe</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cultus Lake</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Georgian Bay</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Manitoulin Island</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Ottawa River</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">The Blue Mountains</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">West Kelowna</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Gran Canaria</a>
+                            <a href="" class="inspiration-content-link">Canary Islands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lanzarote</a>
+                            <a href="" class="inspiration-content-link">Canary Islands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Castle Hill</a>
+                            <a href="" class="inspiration-content-link">Canterbury</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Aspen</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Grand Lake</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Keystone</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Vail</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Estes Park</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Colorado Springs</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Denver</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Durango</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Winter Park</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Salcombe</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Swanage</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cape Coral</a>
+                            <a href="" class="inspiration-content-link">Florida</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Blue Ridge</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Jekylll Island</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Lanier</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Corfu</a>
+                            <a href="" class="inspiration-content-link">Greece</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">McCall</a>
+                            <a href="" class="inspiration-content-link">Idaho</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Clear Lake</a>
+                            <a href="" class="inspiration-content-link">Iowa</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lough Eske</a>
+                            <a href="" class="inspiration-content-link">Ireland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Cumberland</a>
+                            <a href="" class="inspiration-content-link">Kentucky</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Portland</a>
+                            <a href="" class="inspiration-content-link">Maine</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Portland</a>
+                            <a href="" class="inspiration-content-link">Maine</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Deep Creek Lake</a>
+                            <a href="" class="inspiration-content-link">Maryland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Michigan Beach</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lakeside</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Torch Lake</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Traverse City</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Upper Peninsula of Michigan</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Branson</a>
+                            <a href="" class="inspiration-content-link">Missouri</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake of the Orzarks</a>
+                            <a href="" class="inspiration-content-link">Missouri</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Big Sky</a>
+                            <a href="" class="inspiration-content-link">Montana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">West Yellowstone</a>
+                            <a href="" class="inspiration-content-link">Montana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Charleston</a>
+                            <a href="" class="inspiration-content-link">Nevada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cloudcroft</a>
+                            <a href="" class="inspiration-content-link">New Mexico</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Red River</a>
+                            <a href="" class="inspiration-content-link">New Mexico</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bellingen</a>
+                            <a href="" class="inspiration-content-link">New South Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Brunswick Heads</a>
+                            <a href="" class="inspiration-content-link">New South Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Adirondack Mountains</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Placid</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Niagara Falls</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bald Head Island</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bryson City</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Emerald Isle</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Gaston</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Lure</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Norman of Catawba</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Airy</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mountain</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Oak Island</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Geneva-on-the-Lake</a>
+                            <a href="" class="inspiration-content-link">Ohio</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Medicine Park</a>
+                            <a href="" class="inspiration-content-link">Oklahoma</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Turner Falls</a>
+                            <a href="" class="inspiration-content-link">Oklahoma</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Algonquin Park</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Muskoka Lakes</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Tobermory</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bend</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Crater Lake</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Northern Oregon Coast Range</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Sunriver</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Harmony</a>
+                            <a href="" class="inspiration-content-link">Pennsylvania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Ponoco</a>
+                            <a href="" class="inspiration-content-link">Pennsylvania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mont-Tremblant</a>
+                            <a href="" class="inspiration-content-link">Quebec</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Aviermore</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Isle of Mull</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Robe</a>
+                            <a href="" class="inspiration-content-link">South Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mountain Rest</a>
+                            <a href="" class="inspiration-content-link">South Carolina</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">St Helens</a>
+                            <a href="" class="inspiration-content-link">Tasmania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Big Bend National Park</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Canyon Lake</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Austin</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Buchanan</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Betws-y-Coed</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Filley</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Fort Williams</a>
+                            <a href="" class="inspiration-content-link">United Kingdoms</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Loch Lomond</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Port Isaac</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Moab</a>
+                            <a href="" class="inspiration-content-link">Utah</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Zion</a>
+                            <a href="" class="inspiration-content-link">Utah</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Moraira</a>
+                            <a href="" class="inspiration-content-link">Valencian Community</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Inverloch</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Metung</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Buller</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Port Campbell</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Wilsons Promontory</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Shenandoah</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Smith Mountain Lake</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Snowdon</a>
+                            <a href="" class="inspiration-content-link">Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Chelan</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Crescent</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Quinault</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Quinault</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Skamania</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Snowshoe</a>
+                            <a href="" class="inspiration-content-link">West Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Geneva</a>
+                            <a href="" class="inspiration-content-link">Wisconsin</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Wisconsin Dells</a>
+                            <a href="" class="inspiration-content-link">Wisconsin</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Yellowstone National Park</a>
+                            <a href="" class="inspiration-content-link">Wyoming</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Mountain cabins -->
+                    <ul class="inspiration-content">
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Mentone</a><a href="" class="inspiration-content-link">Alabama</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Sedona</a><a href="" class="inspiration-content-link">Azoria</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Helen</a><a href="" class="inspiration-content-link">Georgia</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Pine Mountain</a><a href="" class="inspiration-content-link">Georgia</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Stone Mountain</a><a href="" class="inspiration-content-link">Georgia</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Island Park</a><a href="" class="inspiration-content-link">Idaho</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Blue Mountains</a><a href="" class="inspiration-content-link">New South Wales</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Asheville</a><a href="" class="inspiration-content-link">North Carolina</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Blowing Rock</a><a href="" class="inspiration-content-link">North Carolina</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Boone</a><a href="" class="inspiration-content-link">North Carolia</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Hochatown</a><a href="" class="inspiration-content-link">Oklahoma</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Pigeon Forge</a><a href="" class="inspiration-content-link">Tennessee</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Townsend</a><a href="" class="inspiration-content-link">Tennessee</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Wears Valley</a><a href="" class="inspiration-content-link">Tennessee</a></li>
+                        <li class="inspiration-content-item"><a href="" class="inspiration-content-link">Cabins</a><a href="" class="inspiration-content-link">West Virginia</a></li>
+                    </ul>
+    
+                    <!-- Beach destinations -->
+                    <ul class="inspiration-content">
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Phoenix</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Hot Springs</a>
+                            <a href="" class="inspiration-content-link">Arkansas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Los Angeles</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">San Diego</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">San Francisco</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Barcelona</a>
+                            <a href="" class="inspiration-content-link">Catalonia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Prague</a>
+                            <a href="" class="inspiration-content-link">Czechia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Washington</a>
+                            <a href="" class="inspiration-content-link">District of Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Keswick</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">London</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Scarborough</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Sherwood Forest</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">York</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Paris</a>
+                            <a href="" class="inspiration-content-link">France</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Rhodes</a>
+                            <a href="" class="inspiration-content-link">Greece</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nashville</a>
+                            <a href="" class="inspiration-content-link">Indiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Dublin</a>
+                            <a href="" class="inspiration-content-link">Ireland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Florence</a>
+                            <a href="" class="inspiration-content-link">Italy</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Rome</a>
+                            <a href="" class="inspiration-content-link">Italy</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lisbon</a>
+                            <a href="" class="inspiration-content-link">Lisbon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Grande Isle</a>
+                            <a href="" class="inspiration-content-link">Louisiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">New Orleans</a>
+                            <a href="" class="inspiration-content-link">Louisiana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Marthas Vineyard</a>
+                            <a href="" class="inspiration-content-link">Massachusetts</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Haven</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Duluth</a>
+                            <a href="" class="inspiration-content-link">Minnesota</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Amsterdam</a>
+                            <a href="" class="inspiration-content-link">Netherlands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">New York</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nice</a>
+                            <a href="" class="inspiration-content-link">Provence-Alpes-Côte d'Azur</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Inverness</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Malaga</a>
+                            <a href="" class="inspiration-content-link">Spain</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Valencia</a>
+                            <a href="" class="inspiration-content-link">Spain</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Split</a>
+                            <a href="" class="inspiration-content-link">Split-Dalmatia Country</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nashville</a>
+                            <a href="" class="inspiration-content-link">Tennessee</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Austin</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Houston</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Darthmouth</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Edinburgh</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Liverpool</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">St Ives</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Powell</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Anna</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Leavenworth</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Seattle</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Polular destinations -->
+                    <ul class="inspiration-content">
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Martin</a>
+                            <a href="" class="inspiration-content-link">Alabama</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Banff</a>
+                            <a href="" class="inspiration-content-link">Alberta</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Nerja</a>
+                            <a href="" class="inspiration-content-link">Andalucía</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Greer</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Havasu City</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Powell</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">North Rim</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Payson</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Pinetop-Lakeside</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Red Rock</a>
+                            <a href="" class="inspiration-content-link">Arizona</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Dinner Plain</a>
+                            <a href="" class="inspiration-content-link">Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Streaky Bay</a>
+                            <a href="" class="inspiration-content-link">Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Emerald Lake</a>
+                            <a href="" class="inspiration-content-link">Bristish Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Vancouver Island</a>
+                            <a href="" class="inspiration-content-link">British Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                            <a href="" class="inspiration-content-link">British Columbia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Idyllwild-Pine Cove</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mammorth Lakes</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Palm Desert</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Shaver Lake</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Lake Tahoe</a>
+                            <a href="" class="inspiration-content-link">California</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cultus Lake</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Georgian Bay</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Manitoulin Island</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Ottawa River</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">The Blue Mountains</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">West Kelowna</a>
+                            <a href="" class="inspiration-content-link">Canada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Gran Canaria</a>
+                            <a href="" class="inspiration-content-link">Canary Islands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lanzarote</a>
+                            <a href="" class="inspiration-content-link">Canary Islands</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Castle Hill</a>
+                            <a href="" class="inspiration-content-link">Canterbury</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Aspen</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Grand Lake</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Keystone</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Vail</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Estes Park</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Colorado Springs</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Denver</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Durango</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Winter Park</a>
+                            <a href="" class="inspiration-content-link">Colorado</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Salcombe</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Swanage</a>
+                            <a href="" class="inspiration-content-link">England</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cape Coral</a>
+                            <a href="" class="inspiration-content-link">Florida</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Blue Ridge</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Jekylll Island</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Lanier</a>
+                            <a href="" class="inspiration-content-link">Georgia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Corfu</a>
+                            <a href="" class="inspiration-content-link">Greece</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">McCall</a>
+                            <a href="" class="inspiration-content-link">Idaho</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Clear Lake</a>
+                            <a href="" class="inspiration-content-link">Iowa</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lough Eske</a>
+                            <a href="" class="inspiration-content-link">Ireland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Cumberland</a>
+                            <a href="" class="inspiration-content-link">Kentucky</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Portland</a>
+                            <a href="" class="inspiration-content-link">Maine</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">South Portland</a>
+                            <a href="" class="inspiration-content-link">Maine</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Deep Creek Lake</a>
+                            <a href="" class="inspiration-content-link">Maryland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Michigan Beach</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lakeside</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Torch Lake</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Traverse City</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Upper Peninsula of Michigan</a>
+                            <a href="" class="inspiration-content-link">Michigan</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Branson</a>
+                            <a href="" class="inspiration-content-link">Missouri</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake of the Orzarks</a>
+                            <a href="" class="inspiration-content-link">Missouri</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Big Sky</a>
+                            <a href="" class="inspiration-content-link">Montana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">West Yellowstone</a>
+                            <a href="" class="inspiration-content-link">Montana</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Charleston</a>
+                            <a href="" class="inspiration-content-link">Nevada</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cloudcroft</a>
+                            <a href="" class="inspiration-content-link">New Mexico</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Red River</a>
+                            <a href="" class="inspiration-content-link">New Mexico</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bellingen</a>
+                            <a href="" class="inspiration-content-link">New South Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Brunswick Heads</a>
+                            <a href="" class="inspiration-content-link">New South Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Adirondack Mountains</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Placid</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Niagara Falls</a>
+                            <a href="" class="inspiration-content-link">New York</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bald Head Island</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bryson City</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Emerald Isle</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Gaston</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Lure</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Norman of Catawba</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Airy</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mountain</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Oak Island</a>
+                            <a href="" class="inspiration-content-link">North Carolia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Geneva-on-the-Lake</a>
+                            <a href="" class="inspiration-content-link">Ohio</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Medicine Park</a>
+                            <a href="" class="inspiration-content-link">Oklahoma</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Turner Falls</a>
+                            <a href="" class="inspiration-content-link">Oklahoma</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Algonquin Park</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Muskoka Lakes</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Tobermory</a>
+                            <a href="" class="inspiration-content-link">Ontario</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Bend</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Crater Lake</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Northern Oregon Coast Range</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Sunriver</a>
+                            <a href="" class="inspiration-content-link">Oregon</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Harmony</a>
+                            <a href="" class="inspiration-content-link">Pennsylvania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Ponoco</a>
+                            <a href="" class="inspiration-content-link">Pennsylvania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mont-Tremblant</a>
+                            <a href="" class="inspiration-content-link">Quebec</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Aviermore</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Isle of Mull</a>
+                            <a href="" class="inspiration-content-link">Scotland</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Robe</a>
+                            <a href="" class="inspiration-content-link">South Australia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mountain Rest</a>
+                            <a href="" class="inspiration-content-link">South Carolina</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">St Helens</a>
+                            <a href="" class="inspiration-content-link">Tasmania</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Big Bend National Park</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Canyon Lake</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Austin</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Buchanan</a>
+                            <a href="" class="inspiration-content-link">Texas</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Betws-y-Coed</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Filley</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Fort Williams</a>
+                            <a href="" class="inspiration-content-link">United Kingdoms</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Loch Lomond</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Port Isaac</a>
+                            <a href="" class="inspiration-content-link">United Kingdom</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Moab</a>
+                            <a href="" class="inspiration-content-link">Utah</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Zion</a>
+                            <a href="" class="inspiration-content-link">Utah</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Moraira</a>
+                            <a href="" class="inspiration-content-link">Valencian Community</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Inverloch</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Metung</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Mount Buller</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Port Campbell</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Wilsons Promontory</a>
+                            <a href="" class="inspiration-content-link">Victoria</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Shenandoah</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Smith Mountain Lake</a>
+                            <a href="" class="inspiration-content-link">Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Snowdon</a>
+                            <a href="" class="inspiration-content-link">Wales</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Chelan</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Crescent</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Quinault</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Quinault</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Skamania</a>
+                            <a href="" class="inspiration-content-link">Washington</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Snowshoe</a>
+                            <a href="" class="inspiration-content-link">West Virginia</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lake Geneva</a>
+                            <a href="" class="inspiration-content-link">Wisconsin</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Wisconsin Dells</a>
+                            <a href="" class="inspiration-content-link">Wisconsin</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Yellowstone National Park</a>
+                            <a href="" class="inspiration-content-link">Wyoming</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Unique Stays -->
+                    <ul class="inspiration-content">
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Cabins</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Treehouses</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Glamping</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Tiny Houses</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Beach Houses</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Campers and RVs</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                        <li class="inspiration-content-item">
+                            <a href="" class="inspiration-content-link">Lakehouses</a>
+                            <a href="" class="inspiration-content-link">United States</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+        </main>
+
+
+
+        <footer id="footer">
+            <div class="footer-col">
+                <h5 class="footer-list-header">ABOUT</h5>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">How Airbnb works</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Newsroom</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb 2021</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Investors</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb Plus</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb Luxe</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">HotelTonight</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb for Work</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Made possible by Hosts</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Careers</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Founders' Letter</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-list-header">COMMUNITY</h5>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Diversity & Belonging</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Against Discrimination</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Accessibility</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb Associates</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Frontline Stays</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Guest Referrals</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Gift cards</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Airbnb.org</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-list-header">HOST</h5>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Host your home</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Host an Online Experience</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Host an Experience</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Responsible hosting</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Resource Center</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Community Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5 class="footer-list-header">SUPPORT</h5>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Our COVID-19 Response</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Help Center</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Cancellation options</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Neighborhood Support</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Trust & Safety</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="policy">
+                    <p class="copy-right">© 2021 Airbnb, Inc</p>
+                    <ul class="policy-list">
+                        <li class="policy-item">
+                            <a href="" class="policy-link">Privacy</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="" class="policy-link">Terms</a>
+                        </li>
+                        <li class="policy-item">
+                            <a href="" class="policy-link">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="switch-lang">
+                        <div class="switch-lang-icon">
+                            <a href="" class="switch-lang-icon-link">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;"><path d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"></path></svg>
+                            </a>
+                        </div>
+                        <a href="" class="switch-lang-link">English (US)</a>
+                    </div>
+
+                    <div class="currency">
+                        <span class="currency-symbol">$</span>
+                        <a href="" class="currency-link">USD</a>
+                    </div>
+
+                    <div class="social">
+                        <a class="social-link">
+                            <i class="social-icon fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="social-link">
+                            <i class="social-icon fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="social-link">
+                            <i class="social-icon fab fa-instagram-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+
+
+    <script>
+
+
+        // User menu event 
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        const header = $('#header')
+        const userBtn = $('.user-btn')
+        const userMenuList = $('.user-menu-list')
+        const userMenuItem = $('.user-menu-item')
+
+        userBtn.addEventListener('click', (e) => {
+            e.stopPropagation()
+            if(userMenuList.style.display === 'block') {
+                userMenuList.style.display = 'none'
+            }
+            else {
+                userMenuList.style.display = 'block'
+            }
+        })
+
+        header.addEventListener('click', () => {
+            userMenuList.style.display = 'none'
+        })
+
+
+
+        // Tab inspiration
+        const inspirationItems = $$('.inspiration-item')
+        const inspirationContents = $$('.inspiration-content')
+
+        const inspirationItemActive = $('.inspiration-item.active')
+        const lineActive = $('.inspiration-list .line-active')
+
+        lineActive.style.width = inspirationItemActive.offsetWidth + 'px'
+        lineActive.style.left = inspirationItemActive.offsetLeft + 'px'
+
+        inspirationItems.forEach((inspirationItem, index) => {
+            const inspirationContent = inspirationContents[index]
+
+            inspirationItem.onclick = function() {
+                $('.inspiration-item.active').classList.remove('active')
+                $('.inspiration-content.active').classList.remove('active')
+
+                lineActive.style.width = this.offsetWidth + 'px'
+                lineActive.style.left = this.offsetLeft + 'px'
+                
+
+                this.classList.add('active')
+                inspirationContent.classList.add('active')
+            }
+            
+        })
+
+
+
+        // Change header on scroll
+
+        const expNav = $('#header .exp-nav')
+        const headerNav = $('#header .header-nav')
+        const startSearchScroll = $('#header .start-search-scroll')
+        const userNav = $('#header .user-nav')
+        const becomeHost = $('#header .become-host')
+        const switchLangSvg = $('#header .switch-lang svg')
+        const logoHeader = $('.logo-header')
+        const logoHeaderSvg = $('.logo-header svg')
+
+        window.onscroll = function() {
+            var top = window.scrollY
+            if(top > 10) {
+                expNav.classList.add('active')
+                headerNav.classList.add('active')
+                startSearchScroll.classList.add('active')
+                userNav.classList.add('active')
+                becomeHost.classList.add('active')
+                switchLangSvg.classList.add('active')
+                logoHeader.classList.add('active')
+                logoHeaderSvg.classList.add('active')
+            }
+            else {
+                expNav.classList.remove('active')
+                headerNav.classList.remove('active')
+                startSearchScroll.classList.remove('active')
+                userNav.classList.remove('active')
+                becomeHost.classList.remove('active')
+                switchLangSvg.classList.remove('active')
+                logoHeader.classList.remove('active')
+                logoHeaderSvg.classList.remove('active')
+            }
+        }
+
+
+    </script>
+</body>
+</html>
