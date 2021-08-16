@@ -18,6 +18,7 @@ html {
     line-height: 1.4;
     color: var(--text-color);
     background-color: var(--white-color);
+    scroll-behavior: smooth;
 }
 
 @keyframes fadeIn {
@@ -27,6 +28,10 @@ html {
     to {
         opacity: 1;
     }
+}
+
+#app {
+    overflow: hidden;
 }
 
 #header {
@@ -63,6 +68,10 @@ html {
     top: 0;
 }
 
+#header .header-mobile {
+    display: none;
+}
+
 #header .header-wrap {
     width: 100%;
     height: 100%;
@@ -76,6 +85,10 @@ html {
 #header .logo-header-link {
     text-decoration: none;
     color: var(--white-color);
+}
+
+#header .logo-header-link-mobile {
+    display: none;
 }
 
 .logo-header {
@@ -100,10 +113,16 @@ html {
     align-items: center;
     width: 50%;
     list-style: none;
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-in-out 0.2s;
 }
 
 #header .exp-nav.active {
-    display: none;
+    top: -100px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
 }
 
 #header .exp-link {
@@ -164,6 +183,7 @@ html {
     border: 1px solid #e1e1e1;
     outline: none;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.15);
+    font-size: 1.4rem;
 }
 
 #header .start-search-input::placeholder {
@@ -337,7 +357,7 @@ html {
     position: absolute;
     left: -50px;
     top: 50px;
-    width: 850px;
+    width: 112%;
     height: 66px;
     background-color: var(--white-color);
     border-radius: 200px;
@@ -350,6 +370,7 @@ html {
     display: inline-block;
     background-color: transparent;
     border-radius: 200rem;
+    width: 24%;
 }
 
 .header-wrap-input:hover {
@@ -393,6 +414,10 @@ html {
     border: none;
     font-size: 1.6rem;
     border-radius: 200rem;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .header-input-search:focus {
@@ -401,7 +426,7 @@ html {
 }
 
 
-.search-location {
+/* .search-location {
     width: 265px;
 }
 .search-checkin {
@@ -412,7 +437,7 @@ html {
 }
 .search-guest {
     width: 237px;
-}
+} */
 
 .search-location::placeholder,
 .search-checkin::placeholder,
@@ -572,11 +597,7 @@ html {
 
 
 .try-hosting {
-    background: url('../img/try_hosting.webp') top center / contain no-repeat;
-    padding-top: 35.5%;
-    background-size: 100% 100%;
     margin: 60px 0 0;
-    border-radius: 20px;
     position: relative;
 }
 
@@ -585,6 +606,7 @@ html {
     top: 27%;
     left: 80px;
 }
+
 
 .hosting-header {
     font-size: 4.8rem;
@@ -617,7 +639,19 @@ html {
     filter: brightness(90%);
 }
 
+.try-hosting-link {
+    text-decoration: none;
+    color: transparent;
+}
 
+.try-hosting-img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.try-hosting-img-mobile {
+    display: none;
+}
 
 
 .discover-exp {
@@ -814,6 +848,8 @@ html {
 
 .footer-bottom .policy {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 0;
 }
@@ -847,7 +883,7 @@ html {
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .footer-bottom .switch-lang {
