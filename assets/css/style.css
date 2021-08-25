@@ -21,6 +21,15 @@ html {
     scroll-behavior: smooth;
 }
 
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0.4;
@@ -50,7 +59,8 @@ html {
     top: 100px;
     width: 100%;
     height: 100px;
-    filter: blur(12px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
 }
 
 #header .header-nav {
@@ -135,11 +145,13 @@ html {
 }
 
 #header .exp-link:hover {
-    filter: brightness(85%);
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
 }
 
 #header .exp-link.active:hover {
-    filter: unset;
+    -webkit-filter: unset;
+            filter: unset;
 }
 
 #header .exp-link:hover::after {
@@ -184,6 +196,30 @@ html {
     outline: none;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.15);
     font-size: 1.4rem;
+}
+
+#header .start-search-input::-webkit-input-placeholder {
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    font-weight: 600;
+}
+
+#header .start-search-input::-moz-placeholder {
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    font-weight: 600;
+}
+
+#header .start-search-input:-ms-input-placeholder {
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    font-weight: 600;
+}
+
+#header .start-search-input::-ms-input-placeholder {
+    font-size: 1.4rem;
+    color: #3b3b3b;
+    font-weight: 600;
 }
 
 #header .start-search-input::placeholder {
@@ -305,7 +341,8 @@ html {
     background-color: var(--white-color);
     border-radius: 10px;
     display: none;
-    animation: fadeIn ease-in-out 0.2s;
+    -webkit-animation: fadeIn ease-in-out 0.2s;
+            animation: fadeIn ease-in-out 0.2s;
     z-index: 1;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
 }
@@ -371,6 +408,8 @@ html {
     background-color: transparent;
     border-radius: 200rem;
     width: 24%;
+    height: 100%;
+    top: -2px;
 }
 
 .header-wrap-input:hover {
@@ -409,7 +448,7 @@ html {
 .header-input-search {
     position: relative;
     background-color: transparent;
-    padding: 32px 34px 16px;
+    padding: 28px 34px 16px;
     outline: none;
     border: none;
     font-size: 1.6rem;
@@ -439,12 +478,41 @@ html {
     width: 237px;
 } */
 
-.search-location::placeholder,
-.search-checkin::placeholder,
-.search-checkout::placeholder,
-.search-guest::placeholder {
+.header-input-search::-webkit-input-placeholder {
     font-size: 1.4rem;
     color: #8e8e8e;
+    -webkit-user-select: none;
+            user-select: none;
+}
+
+.header-input-search::-moz-placeholder {
+    font-size: 1.4rem;
+    color: #8e8e8e;
+    -moz-user-select: none;
+         user-select: none;
+}
+
+.header-input-search:-ms-input-placeholder {
+    font-size: 1.4rem;
+    color: #8e8e8e;
+    -ms-user-select: none;
+        user-select: none;
+}
+
+.header-input-search::-ms-input-placeholder {
+    font-size: 1.4rem;
+    color: #8e8e8e;
+    -ms-user-select: none;
+        user-select: none;
+}
+
+.header-input-search::placeholder {
+    font-size: 1.4rem;
+    color: #8e8e8e;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 
@@ -539,7 +607,8 @@ html {
 .explore-img {
     width: 64px;
     height: 100%;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -631,12 +700,15 @@ html {
     border-radius: 8px;
     background-color: var(--white-color);
     cursor: pointer;
+    transition: -webkit-filter ease-in 0.1s;
     transition: filter ease-in 0.1s;
+    transition: filter ease-in 0.1s, -webkit-filter ease-in 0.1s;
     will-change: filter;
 }
 
 .hosting-btn:hover {
-    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
 }
 
 .try-hosting-link {
@@ -684,6 +756,7 @@ html {
     height: 440px;
     border-radius: 8px;
     cursor: pointer;
+    display: block;
 }
 
 .discover-featured-btn {
@@ -702,6 +775,7 @@ html {
 
 
 .discover-item-header {
+    margin-top: 8px;
     display: block;
     font-size: 1.8rem;
     font-weight: 500;
