@@ -1,2 +1,2 @@
 Web clone<br/>
-[Check it out here](https://qthuy26.github.io/Airbnb/)
+[Check it out here](https://qthuy2k1.github.io/Airbnb/)
